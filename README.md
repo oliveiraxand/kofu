@@ -11,7 +11,7 @@ O Kofu é uma aplicação web projetada para ajudar você a gerenciar suas taref
 ## Tecnologias Utilizadas
 
 **Laravel
-**Vue.js
+**Vie.js
 
 ## Como utilizar
 
