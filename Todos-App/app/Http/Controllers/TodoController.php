@@ -81,6 +81,27 @@ class TodoController extends Controller
         return to_route('todos.index');
     }
 
+    public function iscompleted(Request $request)
+    {
+    $todoId = $request->input('todo_id');
+    $todo = Todo::find($todoId);
+
+    if (!$todo) {
+        session()->flash('error', 'Todo not found');
+        return redirect()->route('todos.index')->withErrors([
+            'error' => 'Todo not found'
+        ]);
+    }
+
+    $todo->update([
+        'is_completed' => 1,
+    ]);
+
+    $request->session()->flash('alert-info', 'Tarefa Completa! Parabéns');
+
+    return redirect()->route('todos.index');
+    }
+
     public function destroy(Request $request)
     {
         $todo = Todo::find($request->todo_id);

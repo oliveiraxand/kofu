@@ -65,9 +65,14 @@
                                     <td>{{ $todo->description }} </td>
                                     <td>
                                     @if ($todo->is_completed == 1)
-                                        <a class="btn btn-sm btn-success" href="#">Completed</a>
+                                    <a class="btn btn-sm btn-success" disabled href="#">Completed</a>
                                     @else
-                                        <a class="btn btn-sm btn-secondary" href="#">Incomplete</a>
+                                    <form method="post" action="{{ route('todos.iscompleted') }}">
+                                    @csrf
+                                    @method('PUT')
+                                    <input type="hidden" name="todo_id" value="{{ $todo->id }}" />
+                                    <button type="submit" class="btn btn-sm btn-secondary">Incompleta</button>
+                                    </form>
                                     @endif
                                     </td>
 

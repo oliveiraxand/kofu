@@ -34,6 +34,8 @@ Route::prefix('todos')->as('todos.')->controller(TodoController::class)->group(f
     Route::get('{id}/edit', 'edit')->name('edit');
     
     Route::put('update', 'update')->name('update');
+
+    Route::put('iscompleted', 'iscompleted')->name('iscompleted');
     
     Route::delete('destroy', 'destroy')->name('destroy');
 });
