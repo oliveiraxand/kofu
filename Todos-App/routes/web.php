@@ -33,3 +33,5 @@ Route::get('todos/show/{id}', [TodoController::class, 'show'])->name('todos.show
 Route::get('todos/{id}/edit', [TodoController::class, 'edit'])->name('todos.edit');
 
 Route::put('todos/update', [TodoController::class, 'update'])->name('todos.update');
+
+Route::delete('todos/destroy', [TodoController::class, 'destroy'])->name('todos.destroy');

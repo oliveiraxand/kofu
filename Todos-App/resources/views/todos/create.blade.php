@@ -7,6 +7,8 @@
             <div class="card">
                 <div class="card-header">{{ __('Dashboard') }}</div>
                 <div class="card-body">
+                <a class="btn btn-info" href="{{ url()->previous() }}">Voltar</a>
+                   
                     <h1>Criar tarefa</h1>
                     @if ($errors->any())
                         <div class="alert alert-danger">

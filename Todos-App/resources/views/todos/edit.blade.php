@@ -7,6 +7,7 @@
             <div class="card">
                 <div class="card-header">{{ __('Dashboard') }}</div>
                 <div class="card-body">
+                <a class="btn btn-info" href="{{ url()->previous() }}">Voltar</a>
                 <h1>Editar Tarefa</h1>
                 <form method="post" action="{{ route('todos.update') }}">
                     @csrf
