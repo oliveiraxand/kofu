@@ -16,4 +16,14 @@ class TodoController extends Controller
         return view('todos.create');
     }
     
+    public function edit()
+    {
+        return view('todos.edit');
+    }
+
+    public function store(Request $request)
+    {
+        return $request->all();
+    }
+
 }
