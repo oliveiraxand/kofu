@@ -1,7 +1,7 @@
 # Kofu - To do list 
 
 ## Descrição
-Este é um aplicativo web desenvolvido usando Vite.js para o front-end e Lavarel para o back-end. Crie, edite, remova e tarefas!
+O Kofu é uma aplicação web projetada para ajudar você a gerenciar suas tarefas diárias de maneira eficiente. Desenvolvido com Vite.js para o front-end e Laravel para o back-end, o Kofu oferece recursos simples e poderosos para criar, editar, remover e organizar suas tarefas.
 
 ## Pré-requisitos
 1. **Node.js 
