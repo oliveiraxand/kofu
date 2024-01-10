@@ -29,7 +29,7 @@ class TodoController extends Controller
             'is_completed' => 0
         ]);
 
-        $request->session()->flash('alert-success', 'Todo created successfully!');
+        $request->session()->flash('alert-success', 'Tarefa criada com sucesso!');
 
         return to_route('todos.index');
         // return redirect()->route('todos.index');
@@ -39,9 +39,9 @@ class TodoController extends Controller
     {
         $todo = Todo::find($id);
         if(! $todo){
-            session()->flash('error', 'Todo not found');
+            session()->flash('error', 'Tarefa não encontrada');
             return to_route('todos.index')->withErrors([
-                'error' => 'Todo not found'
+                'error' => 'Tarefa não encontrada'
             ]);
         }
         return view('todos.show', ['todo' => $todo]);
@@ -51,9 +51,9 @@ class TodoController extends Controller
     {
         $todo = Todo::find($id);
         if(! $todo){
-            session()->flash('error', 'Todo not found');
+            session()->flash('error', 'Tarefa não encontrada');
             return to_route('todos.index')->withErrors([
-                'error' => 'Todo not found'
+                'error' => 'Tarefa não encontrada'
             ]);
         }
         return view('todos.edit', ['todo' => $todo]);
@@ -64,9 +64,9 @@ class TodoController extends Controller
     {
         $todo = Todo::find($request->todo_id);
         if(! $todo){
-            session()->flash('error', 'Todo not found');
+            session()->flash('error', 'Tarefa não encontrada');
             return to_route('todos.index')->withErrors([
-                'error' => 'Todo not found'
+                'error' => 'Tarefa não encontrada'
             ]);
         }
 
@@ -76,7 +76,7 @@ class TodoController extends Controller
             'is_completed' => $request->is_completed,
         ]);
 
-        $request->session()->flash('alert-info', 'Todo updated successfully!');
+        $request->session()->flash('alert-info', 'Tarefa atualizada com sucesso!');
 
         return to_route('todos.index');
     }
@@ -87,9 +87,9 @@ class TodoController extends Controller
     $todo = Todo::find($todoId);
 
     if (!$todo) {
-        session()->flash('error', 'Todo not found');
+        session()->flash('error', 'Tarefa não encontrada');
         return redirect()->route('todos.index')->withErrors([
-            'error' => 'Todo not found'
+            'error' => 'Tarefa não encontrada'
         ]);
     }
 
@@ -106,13 +106,13 @@ class TodoController extends Controller
     {
         $todo = Todo::find($request->todo_id);
         if(! $todo){
-            session()->flash('error', 'Todo not found');
+            session()->flash('error', 'Tarefa não encontrada');
             return to_route('todos.index')->withErrors([
-                'error' => 'Todo not found'
+                'error' => 'Tarefa não encontrada'
             ]);
         }
         $todo->delete();
-        session()->flash('alert-danger', 'Todo deleted successfully!');
+        session()->flash('alert-danger', 'Tarefa deletada com sucesso!');
         return to_route('todos.index');
     }
 
