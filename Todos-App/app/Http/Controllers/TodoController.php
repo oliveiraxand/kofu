@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\TodoRequest;
 
 class TodoController extends Controller
 {
@@ -21,9 +22,8 @@ class TodoController extends Controller
         return view('todos.edit');
     }
 
-    public function store(Request $request)
+    public function store(TodoRequest $request)
     {
         return $request->all();
     }
-
 }
