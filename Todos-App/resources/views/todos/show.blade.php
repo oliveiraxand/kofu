@@ -15,8 +15,8 @@
                     @endif
                     <a class="btn btn-info" href="{{ url()->previous() }}">Voltar</a>
                     
-                    <p><b>Your Todo title is: </b> {{$todo->title}}</p>
-                    <p><b>Your Todo title is: </b> {{$todo->description}}</p>
+                    <p><b>O título da sua tarefa é: </b> {{$todo->title}}</p>
+                    <p><b>A descrição da sua tarefa é: </b> {{$todo->description}}</p>
                 </div>
             </div>
         </div>

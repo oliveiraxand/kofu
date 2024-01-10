@@ -77,13 +77,13 @@
                                     </td>
 
                                     <td id="outer">
-                                        <a class="inner btn btn-sm btn-success" href="{{ route('todos.edit', $todo->id) }}">Edit</a>
-                                        <a class="inner btn btn-sm btn-info" href="{{ route('todos.show', $todo->id) }}">View</a>
+                                        <a class="inner btn btn-sm btn-success" href="{{ route('todos.edit', $todo->id) }}">Editar</a>
+                                        <a class="inner btn btn-sm btn-info" href="{{ route('todos.show', $todo->id) }}">Visualizar</a>
                                         <form method="post" action="{{ route('todos.destroy') }}" class="inner" >
                                         @csrf
                                         @method('DELETE')
                                         <input type="hidden" name="todo_id" value="{{ $todo->id }}">
-                                            <input type="submit" class="btn btn-sm btn-danger" value="Delete">
+                                            <input type="submit" class="btn btn-sm btn-danger" value="Apagar">
                                         </form>
                                 </tr>
                             @endforeach

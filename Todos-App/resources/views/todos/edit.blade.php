@@ -24,12 +24,12 @@
                     <div class="form-group">
                         <label for="">Status</label>
                         <select name="is_completed" class="form-control">
-                            <option disabled selected> Select Option</option>
+                            <option disabled selected> Selecionar Opção</option>
                             <option value="1">Completa</option>
                             <option value="0">Incompleta</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-primary">Update</button>
+                    <button type="submit" class="btn btn-primary">Editar</button>
                 </form>
                 </div>
             </div>
