@@ -30,3 +30,5 @@ Route::get('todos/edit', [TodoController::class, 'edit'])->name('todos.edit');
 
 Route::post('todos/store', [TodoController::class, 'store'])->name('todos.store');
 
+Route::get('todos/show/{id}', [TodoController::class, 'show'])->name('todos.show');
+

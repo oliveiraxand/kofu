@@ -15,7 +15,7 @@
                     </div>
                     <div class="form-group">
                         <label>Descrição</label>
-                        <textarea name="desc" class="form-control" placeholder="Descrição" cols="5" rows="5"></textarea>
+                        <textarea name="description" class="form-control" placeholder="Descrição" cols="5" rows="5"></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Update</button>
                 </form>
