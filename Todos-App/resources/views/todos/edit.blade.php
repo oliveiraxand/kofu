@@ -8,14 +8,25 @@
                 <div class="card-header">{{ __('Dashboard') }}</div>
                 <div class="card-body">
                 <h1>Editar Tarefa</h1>
-                <form>
+                <form method="post" action="{{ route('todos.update') }}">
+                    @csrf
+                    @method('PUT')
+                    <input type="hidden" name="todo_id" value="{{ $todo->id }}" />
                     <div class="form-group">
                         <label>Título</label>
-                        <input type="title" name="title" class="form-control" placeholder="Título" />
+                        <input type="title" name="title" class="form-control" placeholder="Título" value="{{ $todo->title }}" />
                     </div>
                     <div class="form-group">
                         <label>Descrição</label>
-                        <textarea name="description" class="form-control" placeholder="Descrição" cols="5" rows="5"></textarea>
+                        <textarea name="description" class="form-control" placeholder="Descrição" cols="5" rows="5">{{ $todo->description }}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Status</label>
+                        <select name="is_completed" class="form-control">
+                            <option disabled selected> Select Option</option>
+                            <option value="1">Completa</option>
+                            <option value="0">Incompleta</option>
+                        </select>
                     </div>
                     <button type="submit" class="btn btn-primary">Update</button>
                 </form>

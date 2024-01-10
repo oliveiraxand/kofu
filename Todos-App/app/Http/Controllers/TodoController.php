@@ -20,11 +20,6 @@ class TodoController extends Controller
     {
         return view('todos.create');
     }
-    
-    public function edit()
-    {
-        return view('todos.edit');
-    }
 
     public function store(TodoRequest $request)
     {
@@ -51,5 +46,40 @@ class TodoController extends Controller
         }
         return view('todos.show', ['todo' => $todo]);
     }
+
+    public function edit($id)
+    {
+        $todo = Todo::find($id);
+        if(! $todo){
+            session()->flash('error', 'Todo not found');
+            return to_route('todos.index')->withErrors([
+                'error' => 'Todo not found'
+            ]);
+        }
+        return view('todos.edit', ['todo' => $todo]);
+    
+    }
+
+    public function update(TodoRequest $request)
+    {
+        $todo = Todo::find($request->todo_id);
+        if(! $todo){
+            session()->flash('error', 'Todo not found');
+            return to_route('todos.index')->withErrors([
+                'error' => 'Todo not found'
+            ]);
+        }
+
+        $todo->update([
+            'title' => $request->title,
+            'description' => $request->description,
+            'is_completed' => $request->is_completed,
+        ]);
+
+        $request->session()->flash('alert-info', 'Todo updated successfully!');
+
+        return to_route('todos.index');
+    }
+
     
 }

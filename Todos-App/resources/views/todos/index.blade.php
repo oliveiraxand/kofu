@@ -28,6 +28,12 @@
                     </div>
                     @endif
 
+                    @if (Session::has('alert-info'))
+                    <div class="alert alert-info" role="alert">
+                      {{ Session::get('alert-info')  }}
+                    </div>
+                    @endif
+
                     @if (Session::has('error'))
                     <div class="alert alert-danger" role="alert">
                       {{ Session::get('error')  }}
@@ -60,7 +66,7 @@
                                     </td>
 
                                     <td id="outer">
-                                        <a class="inner btn btn-sm btn-success" href="">Edit</a>
+                                        <a class="inner btn btn-sm btn-success" href="{{ route('todos.edit', $todo->id) }}">Edit</a>
                                         <a class="inner btn btn-sm btn-info" href="{{ route('todos.show', $todo->id) }}">View</a>
                                         <form action="" class="inner" >
                                             <input type="hidden" name="todo_id" value="{{ $todo->id }}">
