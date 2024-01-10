@@ -44,6 +44,7 @@ class TodoController extends Controller
     {
         $todo = Todo::find($id);
         if(! $todo){
+            session()->flash('error', 'Todo not found');
             return to_route('todos.index')->withErrors([
                 'error' => 'Todo not found'
             ]);
